@@ -8,7 +8,7 @@ package com.ng.demo.utils;
 
 /*
 *
-* 返回值实例
+* 返回值实例参考
 *
 *
     @RequestMapping("/list")
