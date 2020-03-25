@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ng.demo.dao.BlogDao">
+    <resultMap id="BaseResultMap" type="com.ng.demo.model.Blog">
+        <result column="blog_id" jdbcType="INTEGER" property="blogId" />
+        <result column="blog_text" jdbcType="LONGVARCHAR" property="blogText" />
+        <result column="blog_belonger_id" jdbcType="INTEGER" property="blogBelongerId"/>
+        <result column="blog_create_time"  property="blogCreateTime"/>
+    </resultMap>
+
+    <insert id="upLoadBlog" parameterType="com.ng.demo.model.Blog">
+        insert into blog_info(blog_text)
+        value ("${blogText}")
+    </insert>
+
+</mapper>
