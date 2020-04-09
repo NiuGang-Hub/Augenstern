@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
  * Created by Intellij IDEA.
@@ -29,9 +31,9 @@ public class ImgController {
     public WangEditor setImgUrl(@RequestParam("file") MultipartFile file, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         HttpSession session = request.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         byte[] bytes = file.getBytes();
-        String path = "E:/images/"+user.getUserId()+"/";
+        String path = "E:/images/" + user.getUserId() + "/";
 
         File imgFile = new File(path);
         if (!imgFile.exists()) {
@@ -46,14 +48,21 @@ public class ImgController {
             e.printStackTrace();
         }
         //8089是我自己的Nginx图片服务器，可自行百度
-        String value = "http://192.168.2.104:8089/" + user.getUserId()+"/"+fileName;
+
+
+        String value = get_LAN_IP() + user.getUserId() + "/" + fileName;
         String[] values = {value};
 
         WangEditor wangEditor = new WangEditor();
         wangEditor.setErrno(0);
         wangEditor.setData(values);
-       // System.out.println(wangEditor.getData());
+        // System.out.println(wangEditor.getData());
         return wangEditor;
+    }
+
+    public static String get_LAN_IP() throws UnknownHostException {
+        InetAddress addr = InetAddress.getLocalHost();
+        return "http://" + addr.getHostAddress() + "/";
     }
 
 }
