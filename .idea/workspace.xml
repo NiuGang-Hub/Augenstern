@@ -8,9 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2c68b493-29e4-4aab-8620-d3be708b1984" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ng/demo/controller/ImgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ng/demo/controller/ImgController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ng/demo/service/impl/imgServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ng/demo/service/impl/ImgServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ng/demo/controller/ImgController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ng/demo/controller/ImgController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +229,7 @@
       <workItem from="1584944274851" duration="13417000" />
       <workItem from="1585123323206" duration="11359000" />
       <workItem from="1585270344108" duration="18000" />
-      <workItem from="1586427986525" duration="2050000" />
+      <workItem from="1586427986525" duration="2807000" />
     </task>
     <task id="LOCAL-00001" summary="初次提交">
       <created>1585139152182</created>
@@ -269,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586429370131</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="图片保存服务与控制器分离">
+      <created>1586430186406</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586430186406</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +305,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初次提交" />
     <MESSAGE value="接口更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="接口更新" />
+    <MESSAGE value="图片保存服务与控制器分离" />
+    <option name="LAST_COMMIT_MESSAGE" value="图片保存服务与控制器分离" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Inspections" timestamp="1584941721456">
@@ -328,10 +333,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="358" y="340" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1583560251069" />
-    <state x="264" y="10" key="CommitChangelistDialog2" timestamp="1586429364179">
+    <state x="264" y="10" key="CommitChangelistDialog2" timestamp="1586430183838">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="264" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586429364179" />
+    <state x="264" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586430183838" />
     <state x="549" y="156" key="FileChooserDialogImpl" timestamp="1585139010935">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -340,22 +345,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="593" y="326" width="373" height="171" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1585139420535" />
-    <state width="1493" height="168" key="GridCell.Tab.0.bottom" timestamp="1586430091691">
+    <state width="1493" height="168" key="GridCell.Tab.0.bottom" timestamp="1586431272942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586430091691" />
-    <state width="1493" height="168" key="GridCell.Tab.0.center" timestamp="1586430091690">
+    <state width="1493" height="168" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586431272942" />
+    <state width="1493" height="168" key="GridCell.Tab.0.center" timestamp="1586431272942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586430091690" />
-    <state width="1493" height="168" key="GridCell.Tab.0.left" timestamp="1586430091690">
+    <state width="1493" height="168" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586431272942" />
+    <state width="1493" height="168" key="GridCell.Tab.0.left" timestamp="1586431272942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586430091690" />
-    <state width="1493" height="168" key="GridCell.Tab.0.right" timestamp="1586430091690">
+    <state width="1493" height="168" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586431272942" />
+    <state width="1493" height="168" key="GridCell.Tab.0.right" timestamp="1586431272942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="168" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586430091690" />
+    <state width="1493" height="168" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586431272942" />
     <state width="1493" height="550" key="GridCell.Tab.1.bottom" timestamp="1585142018528">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -392,10 +397,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="272" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585124476377" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1586429398418">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1586431425203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586429398418" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586431425203" />
     <state x="757" y="61" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1584938188447">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -404,10 +409,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1585140020398" />
-    <state x="564" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586429382042">
+    <state x="564" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586430192834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="564" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1586429382042" />
+    <state x="564" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1586430192834" />
     <state x="323" y="151" width="889" height="566" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1583502254217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
