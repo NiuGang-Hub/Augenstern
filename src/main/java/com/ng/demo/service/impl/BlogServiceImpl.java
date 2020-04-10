@@ -5,6 +5,9 @@ import com.ng.demo.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.util.HtmlUtils;
+
+import java.util.Date;
 
 /**
  * Created by Intellij IDEA.
@@ -15,8 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BlogServiceImpl implements BlogService {
     @Autowired
     private BlogDao blogDao;
+
+
     @Override
-    public int upLoadBlog(int blogId, String blogText){
-        return blogDao.upLoadBlog(blogId,blogText);
+    public int upLoadBlog(Integer blogBelongerId, String blogText, String date) {
+        String BlogText =HtmlUtils.htmlEscapeDecimal(blogText);
+        return blogDao.upLoadBlog(blogBelongerId,BlogText,date);
     }
 }

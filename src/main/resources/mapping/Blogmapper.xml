@@ -6,12 +6,12 @@
         <result column="blog_id" jdbcType="INTEGER" property="blogId" />
         <result column="blog_text" jdbcType="LONGVARCHAR" property="blogText" />
         <result column="blog_belonger_id" jdbcType="INTEGER" property="blogBelongerId"/>
-        <result column="blog_create_time"  property="blogCreateTime"/>
+        <result column="blog_create_time" jdbcType="TIMESTAMP" property="blogCreateTime"/>
     </resultMap>
 
     <insert id="upLoadBlog" parameterType="com.ng.demo.model.Blog">
-        insert into blog_info(blog_text)
-        value ("${blogText}")
+        insert into blog_info(blog_text,blog_belonger_id,blog_create_time)
+        value ("${blogText}","${blogBelongerId}",#{date})
     </insert>
 
 </mapper>

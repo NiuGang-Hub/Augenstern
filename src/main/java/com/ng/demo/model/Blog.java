@@ -1,5 +1,7 @@
 package com.ng.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 /**
@@ -12,29 +14,22 @@ public class Blog {
     private Integer blogId;
     private String blogText;
     private Integer blogBelongerId;
-    private Date blogCreateTime;
 
-    public Blog(Integer blogId, String blogText, Integer blogBelongerId, Date blogCreateTime) {
+    private String blogCreateTime;
+
+    public Blog(Integer blogId, String blogText, Integer blogBelongerId, String blogCreateTime) {
         this.blogId = blogId;
         this.blogText = blogText;
         this.blogBelongerId = blogBelongerId;
         this.blogCreateTime = blogCreateTime;
     }
 
-    public Integer getBlogBelongerId() {
-        return blogBelongerId;
+    public Integer getBlogId() {
+        return blogId;
     }
 
-    public void setBlogBelongerId(Integer blogBelongerId) {
-        this.blogBelongerId = blogBelongerId;
-    }
-
-    public Date getBlogCreateTime() {
-        return blogCreateTime;
-    }
-
-    public void setBlogCreateTime(Date blogCreateTime) {
-        this.blogCreateTime = blogCreateTime;
+    public void setBlogId(Integer blogId) {
+        this.blogId = blogId;
     }
 
     public String getBlogText() {
@@ -45,13 +40,19 @@ public class Blog {
         this.blogText = blogText;
     }
 
-
-    public Integer getBlogId() {
-        return blogId;
+    public Integer getBlogBelongerId() {
+        return blogBelongerId;
     }
 
-    public void setBlogId(Integer blogId) {
-        this.blogId = blogId;
+    public void setBlogBelongerId(Integer blogBelongerId) {
+        this.blogBelongerId = blogBelongerId;
     }
 
+    public String getBlogCreateTime() {
+        return blogCreateTime;
+    }
+
+    public void setBlogCreateTime(String blogCreateTime) {
+        this.blogCreateTime = blogCreateTime;
+    }
 }
