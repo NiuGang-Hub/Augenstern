@@ -1,6 +1,8 @@
 package com.ng.demo.controller;
 
+import com.ng.demo.enums.ResultEnum;
 import com.ng.demo.pojo.User;
+import com.ng.demo.utils.JsonResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
@@ -22,9 +24,9 @@ public class PageController {
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
         if(user == null)
-            return new JsonResult<>("401","访问失败，请登录后查看");
+            return new JsonResult<>(ResultEnum.NOT_LOGIN.getCode(),"访问失败，请登录后查看");
         else {
             System.out.println(user.getUserName()+"访问了首页");
-            return new JsonResult<>("200","访问成功");}
+            return new JsonResult<>(ResultEnum.SUCCESS.getCode(),"访问成功");}
     }
 }

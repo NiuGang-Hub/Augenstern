@@ -1,9 +1,11 @@
 package com.ng.demo.controller;
 
 
+import com.ng.demo.enums.ResultEnum;
 import com.ng.demo.pojo.Blog;
 import com.ng.demo.pojo.User;
 import com.ng.demo.service.BlogService;
+import com.ng.demo.utils.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,7 +37,7 @@ public class BlogController {
         User user= (User) session.getAttribute("user");
 
         blogService.upLoadBlog(10,blogText, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-        return new JsonResult<Blog>("200","保存成功");
+        return new JsonResult<Blog>(ResultEnum.SUCCESS.getCode(),"保存成功");
     }
 
     @GetMapping("/selectblog")
@@ -46,6 +48,6 @@ public class BlogController {
         User user= (User) session.getAttribute("user");
 
 //        blogService.upLoadBlog(10,blogText, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-        return new JsonResult<Blog>("200","保存成功");
+        return new JsonResult<Blog>(ResultEnum.SUCCESS.getCode(),"保存成功");
     }
 }

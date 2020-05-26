@@ -2,7 +2,7 @@ package com.ng.demo.advice;
 
 
 import com.ng.demo.exception.BlogException;
-import com.ng.demo.utils.Result;
+import com.ng.demo.utils.JsonResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -25,8 +25,8 @@ public class BlogExceptionAdvice {
      */
     @ExceptionHandler(BlogException.class)
     @ResponseBody
-    public Result<Object> exceptionHandler(BlogException exception) {
+    public JsonResult<Object> exceptionHandler(BlogException exception) {
         log.error("统一异常处理：", exception);
-        return new Result<>(exception.getErrorCode(), exception.getMessage());
+        return new JsonResult<>(exception.getErrorCode(), exception.getMessage());
     }
 }
