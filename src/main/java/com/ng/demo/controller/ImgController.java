@@ -1,6 +1,6 @@
 package com.ng.demo.controller;
 
-import com.ng.demo.model.WangEditor;
+import com.ng.demo.pojo.WangEditor;
 import com.ng.demo.service.impl.ImgServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

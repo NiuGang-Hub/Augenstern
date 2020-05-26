@@ -1,8 +1,7 @@
 package com.ng.demo.dao;
 
-import com.ng.demo.model.User;
+import com.ng.demo.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
-import org.mybatis.spring.annotation.MapperScan;
 
 /**
  * Created by Intellij IDEA.

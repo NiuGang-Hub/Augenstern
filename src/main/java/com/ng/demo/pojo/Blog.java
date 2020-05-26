@@ -1,8 +1,4 @@
-package com.ng.demo.model;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import java.util.Date;
+package com.ng.demo.pojo;
 
 /**
  * Created by Intellij IDEA.

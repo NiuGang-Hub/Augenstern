@@ -1,10 +1,6 @@
 package com.ng.demo.dao;
 
-import com.ng.demo.model.Blog;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.Date;
 
 /**
  * Created by Intellij IDEA.

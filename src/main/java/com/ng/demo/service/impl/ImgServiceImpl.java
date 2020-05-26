@@ -1,6 +1,6 @@
 package com.ng.demo.service.impl;
 
-import com.ng.demo.model.User;
+import com.ng.demo.pojo.User;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +29,6 @@ public class ImgServiceImpl {
             imgFile.mkdirs();
         }
         String fileName = file.getOriginalFilename();// 文件名称
-        System.out.println(path + fileName);
 
         try (FileOutputStream fos = new FileOutputStream(new File(path + fileName))) {
             fos.write(bytes);

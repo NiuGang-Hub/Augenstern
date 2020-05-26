@@ -1,11 +1,11 @@
 package com.ng.demo.controller;
 
 
-import com.ng.demo.model.User;
+import com.ng.demo.pojo.User;
 import com.ng.demo.service.UserService;
-import com.ng.demo.utils.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
  * Date:  2020/3/6
  */
 @RestController
+@CrossOrigin
 
 public class UserController {
 
@@ -38,13 +39,11 @@ public class UserController {
      *
      * 一定是登录成功才能在session中添加User，不然就会出现用户并未登录成功，但提示"您已经登录了，不要重复登录啦！"
      */
-    @GetMapping("/login")
+    @PostMapping("/login")
     public JsonResult<User> login(@RequestParam("userName") String userName, @RequestParam("passWord") String passWord, HttpServletRequest request, HttpServletResponse response) {
 
         HttpSession session = request.getSession();
-        //Cookie cookie = new Cookie("username", "Jovan");
         if (session.getAttribute("user") != null) {
-            //response.addCookie(cookie);
             return new JsonResult<>("401", "您已经登录了，不要重复登录啦！");
         }
         User user = userService.selectByUserName(userName);

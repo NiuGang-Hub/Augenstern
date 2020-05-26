@@ -1,7 +1,6 @@
 package com.ng.demo.controller;
 
-import com.ng.demo.model.User;
-import com.ng.demo.utils.JsonResult;
+import com.ng.demo.pojo.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;

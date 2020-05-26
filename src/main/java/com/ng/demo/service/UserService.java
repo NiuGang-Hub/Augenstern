@@ -1,6 +1,6 @@
 package com.ng.demo.service;
 
-import com.ng.demo.model.User;
+import com.ng.demo.pojo.User;
 
 /**
  * Created by Intellij IDEA.

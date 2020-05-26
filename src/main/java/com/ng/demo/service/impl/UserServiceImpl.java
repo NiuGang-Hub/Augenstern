@@ -1,7 +1,7 @@
 package com.ng.demo.service.impl;
 
 import com.ng.demo.dao.UserDao;
-import com.ng.demo.model.User;
+import com.ng.demo.pojo.User;
 import com.ng.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

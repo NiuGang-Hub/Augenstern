@@ -1,4 +1,4 @@
-package com.ng.demo.model;
+package com.ng.demo.pojo;
 
 /**
  * Created by Intellij IDEA.
