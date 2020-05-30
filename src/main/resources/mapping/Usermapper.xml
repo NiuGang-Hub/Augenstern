@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ng.demo.dao.UserDao">
+<mapper namespace="com.ng.demo.mapper.UserDao">
 
     <resultMap id="BaseResultMap" type="com.ng.demo.pojo.User">
-        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <id column="user_id" jdbcType="INTEGER" property="userId" />
         <result column="user_name" jdbcType="VARCHAR" property="userName" />
         <result column="user_password" jdbcType="VARCHAR" property="passWord"/>
     </resultMap>
 
-    <select id="selectByUserName" resultType="com.ng.demo.pojo.User">
-        select
-        user_id,
-        user_name,
-        user_password
+    <!--resultMap返回pojo必须得有无参构造方法-->
+    <!--resultType返回pojo必须得有全参构造方法-->
+    <select id="selectByUserName"  resultMap="BaseResultMap" >
+        select user_id, user_name, user_password
         from user_info
-        where
-        user_name = #{user_name}
+         where user_name = #{userName}
     </select>
 
-    <select id="selectByUserId" resultType="com.ng.demo.pojo.User">
-        select
-        user_name,
-        user_password
-        from user_info
-        where
-        user_name = #{user_Id}
-    </select>
 
     <insert id="addUser" parameterType="com.ng.demo.pojo.User">
         insert into user_info(user_name,user_password)

@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.example.demo.DemoApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.063 s <<< FAILURE! - in com.example.demo.DemoApplicationTests
-contextLoads(com.example.demo.DemoApplicationTests)  Time elapsed: 0.006 s  <<< ERROR!
-java.lang.NullPointerException
-	at com.example.demo.DemoApplicationTests.contextLoads(DemoApplicationTests.java:21)
-

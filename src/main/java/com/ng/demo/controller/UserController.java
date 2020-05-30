@@ -1,17 +1,24 @@
 package com.ng.demo.controller;
 
-
 import com.ng.demo.enums.ResultEnum;
+import com.ng.demo.enums.StateEnums;
 import com.ng.demo.pojo.User;
+import com.ng.demo.service.AdminService;
 import com.ng.demo.service.UserService;
+import com.ng.demo.token.UsernamePasswordToken;
 import com.ng.demo.utils.JsonResult;
+import com.ng.demo.utils.StringUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Intellij IDEA.
@@ -20,7 +27,7 @@ import javax.servlet.http.HttpSession;
  */
 @RestController
 @CrossOrigin
-
+@RequestMapping("/user")
 public class UserController {
 
 
@@ -28,8 +35,11 @@ public class UserController {
     @Autowired
     public UserService userService;
 
+    @Autowired
+    public AdminService adminService;
+
     /**
-     * 方法名称 login 返回值json  入参（String ，String）
+     * 方法名称 login 返回值json  入参（User）
      * <p>
      * 1.查看session中是否有值 User 有则提示已经登录 ，没有就 根据@RequestParam过来的值进行登录操作
      * 2.先进行查询 看看该用户是否存在，不存在提示  "用户不存在" 并返回错误代码 401 交前台处理
@@ -39,25 +49,31 @@ public class UserController {
      * **************特别注意*************
      * <p>
      * 一定是登录成功才能在session中添加User，不然就会出现用户并未登录成功，但提示"您已经登录了，不要重复登录啦！"
+     * @return
      */
     @PostMapping("/login")
-    public JsonResult<User> login(@RequestParam("userName") String userName, @RequestParam("passWord") String passWord, HttpServletRequest request, HttpServletResponse response) {
+    public JsonResult<Object> login(@RequestBody User user) {
 
-        HttpSession session = request.getSession();
-        if (session.getAttribute("user") != null) {
-            return new JsonResult<>(ResultEnum.ERROR.getCode(), "您已经登录了，不要重复登录啦！");
+
+        if (user == null || StringUtils.isBlank(user.getUserName()) || StringUtils.isBlank(user.getPassWord())) {
+            return new JsonResult<>(ResultEnum.PARAMS_NULL.getCode(), "用户名或密码错误！");
         }
-
-        User user = userService.selectByUserName(userName);
-
-        if (user == null) {
-            return new JsonResult<>(ResultEnum.ERROR.getCode(), "用户不存在");
-        } else if (user.getPassWord().equals(passWord)) {
-            session.setAttribute("user", user);
-            return new JsonResult<>(ResultEnum.SUCCESS.getCode(), "登陆成功");
-        } else {
-            return new JsonResult<>(ResultEnum.ERROR.getCode(), "密码错误");
+        Subject subject = SecurityUtils.getSubject();
+        AuthenticationToken authenticationToken = new UsernamePasswordToken(user.getUserName(), user.getPassWord(), StateEnums.USER.getCode());
+        try {
+            subject.login(authenticationToken);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new JsonResult<>(ResultEnum.PARAMS_NULL.getCode(), "用户名或密码错误！");
         }
+        // 登录成功
+        Serializable sessionId = subject.getSession().getId();
+        User loginUser = (User) subject.getPrincipal();
+        loginUser.setPassWord("");
+        Map<String, Object> returnMap = new HashMap<>(2);
+        returnMap.put("token", sessionId);
+        returnMap.put("user", loginUser);
+        return new JsonResult<>(returnMap);
     }
 
 

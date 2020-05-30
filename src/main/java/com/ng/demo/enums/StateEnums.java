@@ -1,5 +1,7 @@
 package com.ng.demo.enums;
 
+import lombok.Getter;
+
 /**
  * 状态码枚举，
  * Created by Intellij IDEA.
@@ -7,6 +9,7 @@ package com.ng.demo.enums;
  * @author  ng
  * Date:  2020/5/26
  */
+@Getter
 public enum StateEnums {
     /**
      * 逻辑删除状态
@@ -28,6 +31,20 @@ public enum StateEnums {
 
     SEX_MAN(1,"男"),
     SEX_WOMAN(2,"女"),
+
+    /**
+     * 用户标识。
+     * 0表示管理员，1表示普通用户
+     */
+    ADMIN(0, "管理员"),
+    USER(1, "普通用户"),
+
+    /**
+     * 请求访问状态枚举
+     */
+    REQUEST_SUCCESS(1, "请求正常"),
+    REQUEST_ERROR(0, "请求异常"),
+
     ;
 
     private Integer code;

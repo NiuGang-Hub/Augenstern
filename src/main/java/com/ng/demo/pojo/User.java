@@ -1,45 +1,22 @@
 package com.ng.demo.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+
+import java.io.Serializable;
 /**
  * Created by Intellij IDEA.
  * User:  ng
  * Date:  2020/3/6
  */
-
-public class User {
+@Data
+//<!--resultMap返回pojo必须得有无参构造方法-->
+//<!--resultType返回pojo必须得有全参构造方法-->
+@AllArgsConstructor
+public class User implements Serializable {
 
     private Integer userId;
     private String userName;
     private String passWord;
-
-    //mybatis是以构造方法传值所以必须要有构造方法
-    public  User(Integer userId,String userName,String passWord){
-        this.userName = userName;
-        this.passWord = passWord;
-        this.userId = userId;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassWord() {
-        return passWord;
-    }
-
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
 }

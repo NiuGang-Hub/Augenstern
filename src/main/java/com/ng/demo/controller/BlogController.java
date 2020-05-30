@@ -30,24 +30,16 @@ public class BlogController {
     private BlogService blogService;
 
     @PostMapping("/uploadblog")
-    private JsonResult<Blog> upBlog(@RequestParam("blog")String blogText, HttpServletRequest request){
+    private JsonResult<Blog> upBlog(@RequestParam("blog")String blogText){
 
         System.out.println(blogText);
-        HttpSession session =  request.getSession();
-        User user= (User) session.getAttribute("user");
-
-        blogService.upLoadBlog(10,blogText, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+        blogService.upLoadBlog(null,blogText, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
         return new JsonResult<Blog>(ResultEnum.SUCCESS.getCode(),"保存成功");
     }
 
     @GetMapping("/selectblog")
     private JsonResult<Blog> selectblog(@RequestParam("blogId")String blogText, HttpServletRequest request){
 
-        System.out.println(blogText);
-        HttpSession session =  request.getSession();
-        User user= (User) session.getAttribute("user");
-
-//        blogService.upLoadBlog(10,blogText, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
         return new JsonResult<Blog>(ResultEnum.SUCCESS.getCode(),"保存成功");
     }
 }

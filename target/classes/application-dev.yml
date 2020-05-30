@@ -8,9 +8,9 @@ spring:
   datasource:
     username: root
     password: 520...ng
-    url: jdbc:mysql://127.0.0.1/sample-web?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://127.0.0.1/sample-web?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
-    #driver-class-name: com.alibaba.druid.proxy.DruidDriver
+
 
 mybatis:
   mapper-locations: classpath:mapping/*.xml
@@ -18,4 +18,4 @@ mybatis:
 
 logging:
    level:
-     com.ng.demo.dao: trace
+     com.ng.demo.mapper: trace
